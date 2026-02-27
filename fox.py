@@ -40,9 +40,12 @@ def main():
         url = sys.argv[1];limit = sys.argv[2]
 
         if int(limit) >= 1000000:
-            sys.stderr.write("WARNING: The amount of limit you input is exceeding the capacity limit\n")
+            print("WARNING: The amount of limit you input is exceeding the capacity limit", file=sys.stderr)
+
+            sys.stderr.write("Continue action? Y/N: ")
             sys.stderr.flush()
-            y = input("Continue action? Y/N: ") or 'n'
+
+            y = sys.stdin.readline().strip() or 'n'
             return_true() if y.lower() =='y' else os._exit(9)
         outp = filtering(url, limit)
         print(outp)
