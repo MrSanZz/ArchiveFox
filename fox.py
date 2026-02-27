@@ -47,7 +47,7 @@ def main():
         print(outp)
     except IndexError:
         f=''.join(__file__.split('\\')[-1]) if os.name == 'NT' else ''.join(__file__.split('/')[-1])
-        print(f"Usage: python3 {f} <url> <limit>")
+        print(f"Usage: python3 {f} <domain> <limit>")
 
 if __name__ == '__main__':
     main()
